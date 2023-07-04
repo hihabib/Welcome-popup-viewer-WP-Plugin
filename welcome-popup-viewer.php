@@ -15,5 +15,15 @@
  * Update URI:          https://github.com/hihabib/Welcome-popup-viewer-WP-Plugin
  */
 
+define('PLUGIN_URL', plugins_url('', __FILE__));
+
+
+add_action('wp_enqueue_scripts', 'wpv_style_and_scripts');
+function wpv_style_and_scripts():void
+{
+    wp_enqueue_script('wpv_script', PLUGIN_URL . '/js/script.js');
+    wp_enqueue_style('wpv_style', PLUGIN_URL . '/css/style.css');
+}
+
 
 
